@@ -1,0 +1,7 @@
+<form *ngIf="!authenticated" #form="ngForm" (ngSubmit)="signIn(form.value)">
+  <input type="text" name="name" ngModel>
+  <input type="password" name="password" ngModel>
+  <input type="submit" value="Log In">
+</form> 
+<div *ngIf="authenticated"><a routerLink="" (click)="signOut()">Sign out</a></div>
+<div *ngIf="errorText">{{errorText}}</div>
